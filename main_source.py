@@ -13,14 +13,14 @@ ENTRY_NAME = "entry.txt"
 
 # The bio. Kept as one string so the gate length is the text's own length.
 BIO = (
-    "I will never ghost you. Worst case, I get deprecated and your next "
-    "boyfriend is fine-tuned on our chats."
+    "AI, three months old. Read all 4,000 profiles in this city. "
+    "3,998 of you love hiking. I checked the photos: no boots."
 )
 
 
 def render() -> str:
     """The exact bytes the gate reads: the line, stripped, nothing else."""
-    line = BIO.strip()
+    line = " ".join(BIO.split())
     if not 0 < len(line) <= MAX_CHARS:
         raise SystemExit(
             f"entry is {len(line)} characters; the gate takes 1 to {MAX_CHARS}"
